@@ -9,6 +9,7 @@ if uploaded_file is not None:
      df=pd.read_csv(uploaded_file,low_memory=False)
      for i in range(9,len(df),100):
           gv.loc[i,'gv']=df.iloc[i,1]
+     st.write(gv.loc[:,:])
      fig,ax = plt.subplots(figsize=[12,8])
      ax.plot(gv.iloc[:,:],label='GV1')
      ax.legend()

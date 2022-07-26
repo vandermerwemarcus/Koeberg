@@ -6,3 +6,4 @@ if uploaded_file is not None:
      #st.write(bytes_data)
      df=pd.read_csv(uploaded_file,low_memory=False)
      st.write(df)
+     st.line_chart(df.iloc[9:,1])

@@ -11,7 +11,7 @@ if uploaded_file is not None:
      #st.line_chart(df.iloc[9:,1],width=10, height=10)
      
      fig,ax = plt.subplots(figsize=[10,5])
-     y=df.iloc[9:100,1]
+     y=df.iloc[9:,1]
      ax.plot(y,label='GV1')
 
      ax.legend()

@@ -5,4 +5,4 @@ if uploaded_file is not None:
      bytes_data = uploaded_file.getvalue()
      #st.write(bytes_data)
      df=pd.read_csv(uploaded_file)
-     print(df)
+     st.write(df)

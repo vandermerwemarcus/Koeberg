@@ -9,7 +9,7 @@ gv['G1']=0
 uploaded_file = st.file_uploader("Upload csv file here:")
 if uploaded_file is not None:
      df=pd.read_csv(uploaded_file,low_memory=False)
-     for i in range(9,len(df),100):
+     for i in range(10,len(df),300):
           gv.loc[i,'G1']=df.iloc[i,1]
      st.write(gv.loc[:,:])
      

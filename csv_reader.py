@@ -15,7 +15,7 @@ if uploaded_file is not None:
      ax.plot(y,label='GV1')
 
      ax.legend()
-     ax.set_title(tic)
+     ax.set_title('VALVE TIMES')
      #ax.set_xlabel('x label')
      ax.set_ylabel('Price')
      ax.grid(True)

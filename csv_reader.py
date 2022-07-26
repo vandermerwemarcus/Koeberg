@@ -1,11 +1,9 @@
 import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
-
+st.title('GPV VALVE TIMES READER')
 uploaded_file = st.file_uploader("Choose a file")
 if uploaded_file is not None:
-     #bytes_data = uploaded_file.getvalue()
-     #st.write(bytes_data)
      df=pd.read_csv(uploaded_file,low_memory=False)
      
      fig,ax = plt.subplots(figsize=[12,8])

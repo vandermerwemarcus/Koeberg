@@ -14,7 +14,7 @@ if uploaded_file is not None:
      samplerate=float(df.iloc[6,1])
      st.write('Sample Rate:',samplerate*1000,'ms')
      length=blocksize*samplerate
-     slen=round(length,2)
+     slen=round(length,0)
      st.write('Recording Length:',slen,'seconds')
      start=0
      end=0
@@ -28,7 +28,8 @@ if uploaded_file is not None:
      closing=(end-start)*samplerate
      st.write('Closing time:',closing,'sec')
      
-     xaxis = np.linspace(-40,length,7)
+     offset=slen/5
+     xaxis = np.linspace(-offset,length,7)
      saxis=np.round(xaxis,decimals=0)
      st.write(saxis)
      fig,ax = plt.subplots(figsize=[12,6])

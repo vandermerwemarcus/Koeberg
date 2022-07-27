@@ -9,7 +9,7 @@ uploaded_file = st.file_uploader("Upload csv file here:")
 if uploaded_file is not None:
      df=pd.read_csv(uploaded_file,low_memory=False)
      blocksize=float(df.iloc[2,1])
-     st.write('Block Size:',blocksize)
+     st.write('Sample Size:',blocksize)
      samplerate=float(df.iloc[6,1])
      st.write('Sample Rate:',samplerate*1000,'ms')
      length=blocksize*samplerate

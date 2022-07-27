@@ -15,9 +15,17 @@ if uploaded_file is not None:
      length=blocksize*samplerate
      slen=round(length,2)
      st.write('Recording Length:',slen,'seconds')
+     start=0
+     end=0
      for i in range(10,len(df),50):
           gv.loc[i,'G1']=float(df.iloc[i,1])
+          if gv.loc[i,'G1']<10 and start=0:
+               start=i
+          if gv.loc[i,'G1']>0.1 and end=0:
+               end=i
      #st.write(gv.loc[:,:])
+     closing=end-start
+     st.write('Closing time:',closing,'sec')
      
      fig,ax = plt.subplots(figsize=[12,6])
      ax.plot(gv.loc[10:,'G1'],label=df.iloc[1,1])

@@ -21,7 +21,7 @@ if uploaded_file is not None:
           gv.loc[i,'G1']=float(df.iloc[i,1])
           if gv.loc[i,'G1']<10 and start==0:
                start=i
-          if gv.loc[i,'G1']>0.1 and end==0:
+          if gv.loc[i,'G1']<0.1 and end==0:
                end=i
      #st.write(gv.loc[:,:])
      closing=(end-start)*samplerate

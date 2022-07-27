@@ -18,7 +18,7 @@ if uploaded_file is not None:
      ax.legend()
      ax.set_title('VALVE TIMES')
      #ax.set_xlabel('x label')
-     ax.set_yticks([0,5,10])
+     ax.set_yticks([0,10])
      #ax.set_yticklabels(['10','9','8','7','6','5','4','3','2','1'])
      ax.set_ylabel('Travel')
      #ax.grid(True)

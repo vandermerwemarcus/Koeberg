@@ -31,7 +31,6 @@ if uploaded_file is not None:
      offset=slen/5
      xaxis = np.linspace(-offset,length,7)
      saxis=np.round(xaxis,decimals=0)
-     st.write(saxis)
      fig,ax = plt.subplots(figsize=[12,6])
      ax.plot(gv.loc[10:,'G1'],label=df.iloc[1,1])
      ax.legend()

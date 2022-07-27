@@ -19,9 +19,9 @@ if uploaded_file is not None:
      end=0
      for i in range(10,len(df),50):
           gv.loc[i,'G1']=float(df.iloc[i,1])
-          if gv.loc[i,'G1']<10 and start=0:
+          if gv.loc[i,'G1']<10 and start==0:
                start=i
-          if gv.loc[i,'G1']>0.1 and end=0:
+          if gv.loc[i,'G1']>0.1 and end==0:
                end=i
      #st.write(gv.loc[:,:])
      closing=end-start

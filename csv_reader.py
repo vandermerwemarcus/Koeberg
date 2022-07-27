@@ -22,6 +22,6 @@ if uploaded_file is not None:
      ax.set_yticklabels(['2','6','10'])
      #ax.set_xticklabels(['0','50','100'])
      ax.set_ylabel('Travel')
-     #ax.grid(True)
+     ax.grid(True)
      st.pyplot(fig)
 

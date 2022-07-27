@@ -13,7 +13,7 @@ if uploaded_file is not None:
      st.write(gv.loc[:,:])
      
      fig,ax = plt.subplots(figsize=[12,6])
-     ax.plot(gv.loc[9:,'G1'],label='GV1')
+     ax.plot(gv.loc[:,:],label='GV1')
      ax.legend()
      ax.set_title('VALVE TIMES')
      #ax.set_xlabel('x label')

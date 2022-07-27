@@ -24,7 +24,7 @@ if uploaded_file is not None:
           if gv.loc[i,'G1']>0.1 and end==0:
                end=i
      #st.write(gv.loc[:,:])
-     closing=(end-start)/samplerate
+     closing=(end-start)*samplerate
      st.write('Closing time:',closing,'sec')
      
      fig,ax = plt.subplots(figsize=[12,6])

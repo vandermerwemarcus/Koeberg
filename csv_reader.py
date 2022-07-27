@@ -19,7 +19,7 @@ if uploaded_file is not None:
      ax.set_title('VALVE TIMES')
      #ax.set_xlabel('x label')
      ax.set_yticks([0,1,2,3,4,5,6,7,8,9])
-     ax.set_yticklabels(['10','9','8','7','6','5','4','3','2','1','0'])
+     #ax.set_yticklabels(['10','9','8','7','6','5','4','3','2','1','0'])
      ax.set_ylabel('Travel')
      #ax.grid(True)
      st.pyplot(fig)

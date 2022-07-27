@@ -13,12 +13,13 @@ if uploaded_file is not None:
      st.write(gv.loc[:,:])
      
      #Plot data using Matplotlib:
-     fig,ax = plt.subplots(figsize=[12,8])
-     ax.plot(gv.loc[9:,'G1'])#,label='GV1')
+     fig,ax = plt.subplots(figsize=[12,6])
+     ax.plot(gv.loc[9:,'G1'],label='GV1')
      ax.legend()
      ax.set_title('VALVE TIMES')
      #ax.set_xlabel('x label')
      #ax.set_yticks([0,10])
+     ax.set_xticks([0,5,10])
      ax.set_yticklabels(['10','1'])
      ax.set_ylabel('Travel')
      #ax.grid(True)

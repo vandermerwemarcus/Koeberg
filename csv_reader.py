@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
+import numpy as np
 st.header('GPV VALVE TIMES READER')
 gv=pd.DataFrame()
 gv['G1']=0
@@ -27,6 +28,7 @@ if uploaded_file is not None:
      closing=(end-start)*samplerate
      st.write('Closing time:',closing,'sec')
      
+     xaxis = np.linspace(0,length,5)
      fig,ax = plt.subplots(figsize=[12,6])
      ax.plot(gv.loc[10:,'G1'],label=df.iloc[1,1])
      ax.legend()
@@ -34,7 +36,7 @@ if uploaded_file is not None:
      ax.set_yticks([0,2,4,6,8,10])
      #ax.set_xticks([0,5,10])
      ax.set_yticklabels(['0','2','4','6','8','10'])
-     ax.set_xticklabels(['','0','40','80','120','160','200'])
+     ax.set_xticklabels(xaxis)#(['','0','40','80','120','160','200'])
      ax.set_ylabel('Travel')
      ax.set_xlabel('Time (sec)')
      ax.grid(True)

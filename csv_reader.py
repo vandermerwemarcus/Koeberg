@@ -28,7 +28,7 @@ if uploaded_file is not None:
      closing=(end-start)*samplerate
      st.write('Closing time:',closing,'sec')
      
-     xaxis = int(np.linspace(0,length,5))
+     xaxis = np.linspace(0,length,5)
      st.write(xaxis)
      fig,ax = plt.subplots(figsize=[12,6])
      ax.plot(gv.loc[10:,'G1'],label=df.iloc[1,1])

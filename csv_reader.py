@@ -9,7 +9,7 @@ uploaded_file = st.file_uploader("Upload csv file here:")
 if uploaded_file is not None:
      df=pd.read_csv(uploaded_file,low_memory=False)
      for i in range(10,len(df),50):
-          gv.loc[i,'G1']=df.iloc[i,1]
+          gv.loc[i,'G1']=float(df.iloc[i,1])
      st.write(gv.loc[:,:])
      
      fig,ax = plt.subplots(figsize=[12,6])
@@ -18,7 +18,7 @@ if uploaded_file is not None:
      ax.set_title('VALVE TIMES')
      #ax.set_xlabel('x label')
      ax.set_yticks([0,5,10])
-     plt.xticks([0,5,10])
+     ax.set_xticks([0,5,10])
      ax.set_yticklabels(['10','5','1'])
      ax.set_ylabel('Travel')
      #ax.grid(True)

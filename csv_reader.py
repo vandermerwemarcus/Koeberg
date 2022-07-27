@@ -16,7 +16,7 @@ if uploaded_file is not None:
      ax.plot(gv.loc[10:,'G1'],label='GV1')
      ax.legend()
      ax.set_title('VALVE TIMES')
-     ax.set_yticks([0,5,10])
+     ax.set_yticks([2,4,6,8,10])
      #ax.set_xticks([0,5,10])
      ax.set_yticklabels(['2','4','6','8','10'])
      ax.set_xticklabels(['','0','20','40','60','80','100'])

@@ -10,7 +10,7 @@ if uploaded_file is not None:
      df=pd.read_csv(uploaded_file,low_memory=False)
      blocksize=int(df.iloc[2,1])
      st.write('Block Size:',blocksize)
-     samplerate=int(df.iloc[6,1])
+     samplerate=float(df.iloc[6,1])
      st.write('Sample Rate:',samplerate)
      for i in range(10,len(df),50):
           gv.loc[i,'G1']=float(df.iloc[i,1])

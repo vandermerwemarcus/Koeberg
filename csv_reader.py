@@ -11,7 +11,7 @@ if uploaded_file is not None:
      blocksize=float(df.iloc[2,1])
      st.write('Block Size:',blocksize)
      samplerate=float(df.iloc[6,1])
-     st.write('Sample Rate:',samplerate)
+     st.write('Sample Rate:',samplerate*100,'ms')
      length=blocksize*samplerate
      slen=round(length,2)
      st.write('Length:',slen,'seconds')

@@ -10,7 +10,7 @@ if uploaded_file is not None:
      df=pd.read_csv(uploaded_file,low_memory=False)
      for i in range(10,len(df),50):
           gv.loc[i,'G1']=float(df.iloc[i,1])
-     st.write(gv.loc[:,:])
+     #st.write(gv.loc[:,:])
      
      fig,ax = plt.subplots(figsize=[12,6])
      ax.plot(gv.loc[9:,'G1'],label='GV1')

@@ -17,7 +17,7 @@ if uploaded_file is not None:
      st.write('Recording Length:',slen,'seconds')
      start=0
      end=0
-     for i in range(10,len(df),1):
+     for i in range(10,len(df),10):
           gv.loc[i,'G1']=float(df.iloc[i,1])
           if gv.loc[i,'G1']<10 and start==0:
                start=i

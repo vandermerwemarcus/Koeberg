@@ -8,6 +8,8 @@ gv['G1']=0
 uploaded_file = st.file_uploader("Upload csv file here:")
 if uploaded_file is not None:
      df=pd.read_csv(uploaded_file,low_memory=False)
+     blocksize=int(df.iloc[3,1])
+     st.write(blocksize)
      for i in range(10,len(df),50):
           gv.loc[i,'G1']=float(df.iloc[i,1])
      #st.write(gv.loc[:,:])

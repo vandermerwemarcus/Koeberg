@@ -14,7 +14,7 @@ if uploaded_file is not None:
      
      #Plot data using Matplotlib:
      fig,ax = plt.subplots(figsize=[12,8])
-     ax.plot(gv.iloc[9:,:],label='GV1')
+     ax.plot(gv.iloc[9:,0],label='GV1')
      ax.legend()
      ax.set_title('VALVE TIMES')
      #ax.set_xlabel('x label')

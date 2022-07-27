@@ -26,7 +26,7 @@ if uploaded_file is not None:
      ax.set_yticks([0,2,4,6,8,10])
      #ax.set_xticks([0,5,10])
      ax.set_yticklabels(['0','2','4','6','8','10'])
-     ax.set_xticklabels(['','0','20','40','60','80','100'])
+     ax.set_xticklabels(['','0','40','80','120','160','200'])
      ax.set_ylabel('Travel')
      ax.set_xlabel('Time (sec)')
      ax.grid(True)

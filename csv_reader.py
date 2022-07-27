@@ -14,7 +14,7 @@ if uploaded_file is not None:
      st.write('Sample Rate:',samplerate)
      length=blocksize*samplerate
      slen=round(length,2)
-     st.write('Length (sec):',slen)
+     st.write('Length:',slen,'seconds')
      for i in range(10,len(df),50):
           gv.loc[i,'G1']=float(df.iloc[i,1])
      #st.write(gv.loc[:,:])

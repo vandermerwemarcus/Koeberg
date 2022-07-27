@@ -13,6 +13,9 @@ if uploaded_file is not None:
      st.write(gv.loc[:,:])
      
      #Plot data using Matplotlib:
+     plt.plot(gv.loc[9:,'G1'])
+     plt.show()
+     '''
      fig,ax = plt.subplots(figsize=[12,6])
      ax.plot(gv.loc[9:,'G1'],label='GV1')
      ax.legend()
@@ -24,3 +27,4 @@ if uploaded_file is not None:
      ax.set_ylabel('Travel')
      #ax.grid(True)
      st.pyplot(fig)
+     '''

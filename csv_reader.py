@@ -20,7 +20,7 @@ if uploaded_file is not None:
      #st.write(gv.loc[:,:])
      
      fig,ax = plt.subplots(figsize=[12,6])
-     ax.plot(gv.loc[10:,'G1'],label='GV1')
+     ax.plot(gv.loc[10:,'G1'],label=df.iloc[1,1])
      ax.legend()
      ax.set_title('VALVE TIMES')
      ax.set_yticks([0,2,4,6,8,10])

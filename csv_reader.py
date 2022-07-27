@@ -28,7 +28,7 @@ if uploaded_file is not None:
      closing=(end-start)*samplerate
      st.write('Closing time:',closing,'sec')
      
-     xaxis = np.linspace(0,length,6)
+     xaxis = np.linspace(-40,length,7)
      saxis=np.round(xaxis,decimals=0)
      st.write(saxis)
      fig,ax = plt.subplots(figsize=[12,6])

@@ -12,7 +12,7 @@ if uploaded_file is not None:
      def upload():
           df=pd.read_csv(uploaded_file,low_memory=False)
      upload()
-     st.write('Uploaded')
+     st.write('Uploaded',df)
      #f=df.to_csv().encode('utf-8')
      #st.download_button(label='Download',data=f)
      #np.save('C:\\Users\\vanderm\\Documents\\Python\\tempnum.npy',arr)

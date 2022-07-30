@@ -10,7 +10,7 @@ uploaded_file = st.file_uploader("Upload csv file here:")
 if uploaded_file is not None:
      df=pd.read_csv(uploaded_file,low_memory=False)
      np.save('C:\\Users\\vanderm\\Documents\\Python\\tempnum',df)
-     g=np.load('C:\Users\vanderm\Documents\Python')
+     g=np.load('C:\\Users\\vanderm\\Documents\\Python\\tempnum.npy')
      st.write(g)
      blocksize=float(df.iloc[2,1])
      st.write('Sample Size:',blocksize)

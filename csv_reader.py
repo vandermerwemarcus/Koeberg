@@ -9,9 +9,9 @@ gv['G1']=0
 uploaded_file = st.file_uploader("Upload csv file here:")
 if uploaded_file is not None:
      df=pd.read_csv(uploaded_file,low_memory=False)
-     arr = df.to_numpy()
-     st.write('array:',arr)
-     st.download_button(label='Download',data=df)
+     f=df.to_csv().encode('utf-8')
+
+     st.download_button(label='Download',data=f)
      #np.save('C:\\Users\\vanderm\\Documents\\Python\\tempnum.npy',arr)
      #g=np.load('C:\\Users\\vanderm\\Documents\\Python\\tempnum.npy')
      st.write('Loaded data:',g)

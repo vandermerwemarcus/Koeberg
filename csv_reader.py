@@ -11,7 +11,7 @@ if uploaded_file is not None:
      df=pd.read_csv(uploaded_file,low_memory=False)
      arr = df.to_numpy()
      st.write('array:',arr)
-     np.save('C:\\Users\\vanderm\\Documents\\Python\\tempnum',arr)
+     np.save('C:\\Users\\vanderm\\Documents\\Python\\tempnum.npy',arr)
      g=np.load('C:\\Users\\vanderm\\Documents\\Python\\tempnum.npy')
      st.write('Loaded data:',g)
      blocksize=float(df.iloc[2,1])

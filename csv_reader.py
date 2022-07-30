@@ -13,12 +13,6 @@ if uploaded_file is not None:
           global df
           df=pd.read_csv(uploaded_file,low_memory=False)
      upload()
-     st.write('Uploaded',df)
-     #f=df.to_csv().encode('utf-8')
-     #st.download_button(label='Download',data=f)
-     #np.save('C:\\Users\\vanderm\\Documents\\Python\\tempnum.npy',arr)
-     #g=np.load('C:\\Users\\vanderm\\Documents\\Python\\tempnum.npy')
-     #st.write('Loaded data:',g)
      blocksize=float(df.iloc[2,1])
      st.write('Sample Size:',blocksize)
      samplerate=float(df.iloc[6,1])

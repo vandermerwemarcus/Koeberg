@@ -9,9 +9,11 @@ gv['G1']=0
 uploaded_file = st.file_uploader("Upload csv file here:")
 if uploaded_file is not None:
      df=pd.read_csv(uploaded_file,low_memory=False)
-     np.save('C:\\Users\\vanderm\\Documents\\Python\\tempnum.npy',df)
+     arr = df.to_numpy()
+     st.write('array:',arr)
+     np.save('C:\\Users\\vanderm\\Documents\\Python\\tempnum',arr)
      g=np.load('C:\\Users\\vanderm\\Documents\\Python\\tempnum.npy')
-     st.write(g)
+     st.write('Loaded data:',g)
      blocksize=float(df.iloc[2,1])
      st.write('Sample Size:',blocksize)
      samplerate=float(df.iloc[6,1])

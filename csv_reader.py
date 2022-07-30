@@ -9,6 +9,8 @@ gv['G1']=0
 uploaded_file = st.file_uploader("Upload csv file here:")
 if uploaded_file is not None:
      #@st.cache
+     def nothing(a):
+          print(a)
      df=pd.read_csv(uploaded_file,low_memory=False)
      #f=df.to_csv().encode('utf-8')
      #st.download_button(label='Download',data=f)
@@ -20,6 +22,7 @@ if uploaded_file is not None:
      samplerate=float(df.iloc[6,1])
      st.write('Sample Rate:',samplerate*1000,'ms')
      length=blocksize*samplerate
+     nothing(length)
      slen=round(length,0)
      st.write('Recording Length:',slen,'seconds')
      start=0

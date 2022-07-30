@@ -8,10 +8,10 @@ gv['G1']=0
 #Upload csv data:
 uploaded_file = st.file_uploader("Upload csv file here:")
 if uploaded_file is not None:
-     @st.cache(suppress_st_warning=True)
-     def nothing(a):
-          st.write('Here it comes',a)
-     df=pd.read_csv(uploaded_file,low_memory=False)
+     @st.cache(suppress_st_warning=True,allow_output_mutation=True)
+     def upload():
+          df=pd.read_csv(uploaded_file,low_memory=False)
+     upload()
      #f=df.to_csv().encode('utf-8')
      #st.download_button(label='Download',data=f)
      #np.save('C:\\Users\\vanderm\\Documents\\Python\\tempnum.npy',arr)
@@ -22,7 +22,7 @@ if uploaded_file is not None:
      samplerate=float(df.iloc[6,1])
      st.write('Sample Rate:',samplerate*1000,'ms')
      length=blocksize*samplerate
-     nothing(length)
+     
      slen=round(length,0)
      st.write('Recording Length:',slen,'seconds')
      start=0

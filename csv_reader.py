@@ -11,7 +11,7 @@ if uploaded_file is not None:
      df=pd.read_csv(uploaded_file,low_memory=False)
      arr = df.to_numpy()
      st.write('array:',arr)
-     st.download_button(label='Download')
+     st.download_button(label='Download',data=df)
      #np.save('C:\\Users\\vanderm\\Documents\\Python\\tempnum.npy',arr)
      #g=np.load('C:\\Users\\vanderm\\Documents\\Python\\tempnum.npy')
      st.write('Loaded data:',g)

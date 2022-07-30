@@ -8,7 +8,7 @@ gv['G1']=0
 #Upload csv data:
 uploaded_file = st.file_uploader("Upload csv file here:")
 if uploaded_file is not None:
-     #@st.cache
+     @st.cache
      def nothing(a):
           st.write(a)
      df=pd.read_csv(uploaded_file,low_memory=False)

@@ -10,7 +10,7 @@ uploaded_file = st.file_uploader("Upload csv file here:")
 if uploaded_file is not None:
      @st.cache(suppress_st_warning=True)
      def nothing(a):
-          st.write(a)
+          st.write('Here it comes',a)
      df=pd.read_csv(uploaded_file,low_memory=False)
      #f=df.to_csv().encode('utf-8')
      #st.download_button(label='Download',data=f)

@@ -21,15 +21,11 @@ st.write(a)
 #@st.experimental_memo(suppress_st_warning=True,persist="disk")
 #@st.cache
 def upload():
- 
-     #st.write('Ready csv upload')
-     uploaded_file = st.file_uploader("Upload csv file here:")
-     if uploaded_file is not None:
-          #st.write('CSV uploaded successfully')
-          global df
-          df=pd.read_csv(uploaded_file,low_memory=False)
-          #st.dataframe(df)
-          return df
+ uploaded_file = st.file_uploader("Upload csv file here:")
+ if uploaded_file is not None:
+  global df
+  df=pd.read_csv(uploaded_file,low_memory=False)
+  return df
 upload()
 blocksize=float(df.iloc[2,1])
 st.write('Sample Size:',blocksize)
@@ -62,4 +58,4 @@ ax.set_ylabel('Travel (% Open)')
 ax.set_xlabel('Time (sec)')
 ax.grid(True)
 st.pyplot(fig)
-
+ 

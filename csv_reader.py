@@ -13,6 +13,7 @@ if uploaded_file is not None:
      st.write('CSV uploaded successfully')
      @st.experimental_memo(suppress_st_warning=True)
      def upload():
+          global df
           df=pd.read_csv(uploaded_file,low_memory=False)
           st.write(df)
           return df

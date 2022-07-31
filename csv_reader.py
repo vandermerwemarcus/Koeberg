@@ -9,11 +9,11 @@ gv=pd.DataFrame()
 df=pd.DataFrame()
 gv['G1']=0
 
-#@st.cache
-def noti():
-     global a
-     a=5
-     return a
+@st.cache
+ def noti():
+          global a
+          a=5
+          return a
 
 noti()
 st.write(a)
@@ -27,7 +27,7 @@ def upload():
           #st.write('CSV uploaded successfully')
           global df
           df=pd.read_csv(uploaded_file,low_memory=False)
-          st.dataframe(df)
+          #st.dataframe(df)
           return df
 upload()
 blocksize=float(df.iloc[2,1])

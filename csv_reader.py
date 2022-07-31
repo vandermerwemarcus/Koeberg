@@ -9,11 +9,11 @@ gv=pd.DataFrame()
 df=pd.DataFrame()
 gv['G1']=0
 
-#@st.cache
-def not():
+@st.cache
+def noti():
      a=5
 
-not()
+noti()
 st.write(a)
 
 #@st.experimental_memo(suppress_st_warning=True,persist="disk")

@@ -4,6 +4,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 st.header('GPV VALVE TIMES READER')
 gv=pd.DataFrame()
+df=pd.DataFrame()
 gv['G1']=0
 #Upload csv data:
 uploaded_file = st.file_uploader("Upload csv file here:")

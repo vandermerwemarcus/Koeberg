@@ -10,6 +10,7 @@ g=1
 #Upload csv data:
 @st.experimental_memo(suppress_st_warning=True)
 def upload():
+     st.write('Upload called...')
      uploaded_file = st.file_uploader("Upload csv file here:")
      return uploaded_file
 

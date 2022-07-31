@@ -10,6 +10,7 @@ gv['G1']=0
 @st.experimental_memo(suppress_st_warning=True)
 def upload():
      uploaded_file = st.file_uploader("Upload csv file here:")
+     return uploaded_file
 
 upload()
 if uploaded_file is not None:

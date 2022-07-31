@@ -7,22 +7,20 @@ gv=pd.DataFrame()
 df=pd.DataFrame()
 gv['G1']=0
 #Upload csv data:
-if 'uploaded_file' not in st.session_state:
-     st.session_state.uploaded_file = 0
-     st.write('Awaiting CSV upload...')
-st.session_state.uploaded_file = st.file_uploader("Upload csv file here:")
-if st.session_state.uploaded_file is not None:
+@st.experimental_memo
+def upload():
+     uploaded_file = st.file_uploader("Upload csv file here:")
+
+upload()
+if uploaded_file is not None:
      st.write('CSV uploaded successfully')
-     df=pd.read_csv(st.session_state.uploaded_file,low_memory=False)
+     df=pd.read_csv(uploaded_file,low_memory=False)
      blocksize=float(df.iloc[2,1])
      st.write('Sample Size:',blocksize)
      samplerate=float(df.iloc[6,1])
      st.write('Sample Rate:',samplerate*1000,'ms')
-     
-     if 'length' not in st.session_state:
-          st.session_state.length = 0
-     st.session_state.length=blocksize*samplerate
-     slen=round(st.session_state.length,0)
+     length=blocksize*samplerate
+     slen=round(length,0)
      st.write('Recording Length:',slen,'seconds')
      start=0
      end=0
@@ -37,7 +35,7 @@ if st.session_state.uploaded_file is not None:
      st.write('Closing time:',closing,'sec')
      
      offset=slen/5
-     xaxis = np.linspace(-offset,st.session_state.length,7)
+     xaxis = np.linspace(-offset,length,7)
      saxis=np.round(xaxis,decimals=0)
      fig,ax = plt.subplots(figsize=[12,6])
      ax.plot(gv.loc[10:,'G1'],label=df.iloc[1,1])

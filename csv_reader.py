@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
-caching = true
+
 maxUploadSize = 100
 st.header('GPV VALVE TIMES READER')
 gv=pd.DataFrame()

@@ -16,7 +16,7 @@ def upload():
           #st.write('CSV uploaded successfully')
           global df
           df=pd.read_csv(uploaded_file,low_memory=False)
-          #st.write('CSV to Dataframe done')
+          st.write(df)
           return df
 upload()
 st.write('Uploading done...',df)

@@ -12,6 +12,7 @@ gv['G1']=0
 #@st.cache
 def noti():
      a=5
+     return a
 
 noti()
 st.write(a)

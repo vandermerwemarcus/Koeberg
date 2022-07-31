@@ -9,6 +9,7 @@ gv['G1']=0
 #Upload csv data:
 uploaded_file = st.file_uploader("Upload csv file here:")
 if uploaded_file is not None:
+     st.write('CSV uploaded successfully')
      df=pd.read_csv(uploaded_file,low_memory=False)
      blocksize=float(df.iloc[2,1])
      st.write('Sample Size:',blocksize)

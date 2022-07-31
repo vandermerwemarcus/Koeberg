@@ -13,7 +13,7 @@ def upload():
      return uploaded_file
 
 upload()
-if gv['G1']==0:# uploaded_file is not None:
+if gv['G1']=0:# uploaded_file is not None:
      st.write('CSV uploaded successfully')
      df=pd.read_csv(uploaded_file,low_memory=False)
      blocksize=float(df.iloc[2,1])

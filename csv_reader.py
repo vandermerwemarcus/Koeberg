@@ -11,7 +11,12 @@ g=1
 uploaded_file = st.file_uploader("Upload csv file here:")
 if uploaded_file is not None:
      st.write('CSV uploaded successfully')
-     df=pd.read_csv(uploaded_file,low_memory=False)
+     @st.experimental_memo
+     def upload():
+          df=pd.read_csv(uploaded_file,low_memory=False)
+          st.write('CSV to DataFrame done')
+          return df
+     upload()
      blocksize=float(df.iloc[2,1])
      st.write('Sample Size:',blocksize)
      samplerate=float(df.iloc[6,1])

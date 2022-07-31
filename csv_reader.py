@@ -14,8 +14,8 @@ if uploaded_file is not None:
      @st.experimental_memo(suppress_st_warning=True)
      def upload():
           df=pd.read_csv(uploaded_file,low_memory=False)
-          st.write('CSV to DataFrame done')
-          #return df
+          st.write(df)
+          return df
      upload()
      blocksize=float(df.iloc[2,1])
      st.write('Sample Size:',blocksize)

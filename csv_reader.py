@@ -10,10 +10,10 @@ df=pd.DataFrame()
 gv['G1']=0
 
 @st.cache
- def noti():
-          global a
-          a=5
-          return a
+def noti():
+ global a
+ a=5
+ return a
 
 noti()
 st.write(a)

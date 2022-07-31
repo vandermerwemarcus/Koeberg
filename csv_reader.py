@@ -27,6 +27,7 @@ def upload():
           #st.write('CSV uploaded successfully')
           global df
           df=pd.read_csv(uploaded_file,low_memory=False)
+          st.dataframe(df)
           return df
 upload()
 blocksize=float(df.iloc[2,1])

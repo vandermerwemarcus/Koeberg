@@ -2,9 +2,11 @@ import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
+from cachetools import Cache
+cache_data = Cache(maxsize=50000)
 st.header('GPV VALVE TIMES READER')
 gv=pd.DataFrame()
-df=pd.DataFrame()
+df1=pd.DataFrame()
 gv['G1']=0
 g=1
 #Upload csv data:
@@ -15,9 +17,11 @@ def upload():
      if uploaded_file is not None:
           st.write('CSV uploaded successfully')
           global df
-          df=pd.read_csv(uploaded_file,low_memory=False)
+          df1=pd.read_csv(uploaded_file,low_memory=False)
           st.write('CSV to Dataframe done')
           return df
+cache_data[hash(df1)] = df1
+df = cache_data.get(hash(df1), None)
 upload()
 st.write('Uploading done...')
 blocksize=float(df.iloc[2,1])

@@ -7,10 +7,10 @@ gv=pd.DataFrame()
 df=pd.DataFrame()
 gv['G1']=0
 #Upload csv data:
-st.session_state.uploaded_file = st.file_uploader("Upload csv file here:")
 if 'uploaded_file' not in st.session_state:
      st.session_state.uploaded_file = 0
      st.write('Awaiting CSV upload...')
+st.session_state.uploaded_file = st.file_uploader("Upload csv file here:")
 if st.session_state.uploaded_file is not None:
      st.write('CSV uploaded successfully')
      df=pd.read_csv(st.session_state.uploaded_file,low_memory=False)

@@ -10,13 +10,13 @@ gv['G1']=0
 
 @st.experimental_memo#(suppress_st_warning=True,persist="disk")
 def upload():
-     st.write('Ready csv upload')
+     #st.write('Ready csv upload')
      uploaded_file = st.file_uploader("Upload csv file here:")
      if uploaded_file is not None:
-          st.write('CSV uploaded successfully')
+          #st.write('CSV uploaded successfully')
           global df
           df=pd.read_csv(uploaded_file,low_memory=False)
-          st.write('CSV to Dataframe done')
+          #st.write('CSV to Dataframe done')
           return df
 
 upload()

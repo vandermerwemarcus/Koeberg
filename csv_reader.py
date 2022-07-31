@@ -8,6 +8,7 @@ df=pd.DataFrame()
 gv['G1']=0
 g=1
 #Upload csv data:
+@st.cache(suppress_st_warning=True)
 st.experimental_memo(suppress_st_warning=True)
 def upload():
      st.write('Ready csv upload')

@@ -15,7 +15,7 @@ if uploaded_file is not None:
      def upload():
           global df
           df=pd.read_csv(uploaded_file,low_memory=False)
-          st.write(df)
+          st.write('CSV to Dataframe done')
           return df
      upload()
      blocksize=float(df.iloc[2,1])

@@ -9,14 +9,7 @@ gv['G1']=0
 #Upload csv data:
 uploaded_file = st.file_uploader("Upload csv file here:")
 if uploaded_file is not None:
-     @st.cache(suppress_st_warning=True,allow_output_mutation=True)
-     def upload():
-          global df
-          df=pd.read_csv(uploaded_file,low_memory=False)
-          st.write('In the function')
-          return df
-          
-     upload()
+     df=pd.read_csv(uploaded_file,low_memory=False)
      blocksize=float(df.iloc[2,1])
      st.write('Sample Size:',blocksize)
      samplerate=float(df.iloc[6,1])

@@ -20,9 +20,9 @@ def upload():
           df1=pd.read_csv(uploaded_file,low_memory=False)
           st.write('CSV to Dataframe done')
           return df
+upload()
 cache_data[hash(df1)] = df1
 df = cache_data.get(hash(df1), None)
-upload()
 st.write('Uploading done...')
 blocksize=float(df.iloc[2,1])
 st.write('Sample Size:',blocksize)

@@ -8,7 +8,7 @@ gv=pd.DataFrame()
 df=pd.DataFrame()
 gv['G1']=0
 
-@st.experimental_memo(suppress_st_warning=True)
+#@st.experimental_memo(suppress_st_warning=True)
 def upload():
      st.write('Ready csv upload')
      uploaded_file = st.file_uploader("Upload csv file here:")
@@ -18,6 +18,7 @@ def upload():
           df=pd.read_csv(uploaded_file,low_memory=False)
           st.write('CSV to Dataframe done')
           return df
+
 upload()
 st.write('Uploading done...')
 blocksize=float(df.iloc[2,1])

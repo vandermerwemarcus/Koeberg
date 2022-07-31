@@ -19,6 +19,7 @@ noti()
 st.write(a)
 
 #@st.experimental_memo(suppress_st_warning=True,persist="disk")
+@st.cache
 def upload():
      #st.write('Ready csv upload')
      uploaded_file = st.file_uploader("Upload csv file here:")

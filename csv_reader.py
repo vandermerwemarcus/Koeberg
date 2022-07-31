@@ -7,7 +7,7 @@ gv=pd.DataFrame()
 df=pd.DataFrame()
 gv['G1']=0
 #Upload csv data:
-@st.experimental_memo
+@st.experimental_memo(suppress_st_warning=True)
 def upload():
      uploaded_file = st.file_uploader("Upload csv file here:")
 

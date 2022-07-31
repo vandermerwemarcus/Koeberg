@@ -9,7 +9,7 @@ gv=pd.DataFrame()
 df=pd.DataFrame()
 gv['G1']=0
 
-@st.cache(suppress_st_warning=True,persist="disk")
+#@st.cache(suppress_st_warning=True,persist="disk")
 def noti():
      global a
      a=5

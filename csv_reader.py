@@ -15,7 +15,7 @@ if uploaded_file is not None:
      samplerate=float(df.iloc[6,1])
      st.write('Sample Rate:',samplerate*1000,'ms')
      
-     if 'length' not in session_state:
+     if 'length' not in st.session_state:
           st.session_state.length = 0
      st.session_state.length=blocksize*samplerate
      slen=round(st.session_state.length,0)

@@ -16,10 +16,8 @@ def upload():
           #st.write('CSV uploaded successfully')
           global df
           df=pd.read_csv(uploaded_file,low_memory=False)
-          st.write(df)
           return df
 upload()
-st.write('Uploading done...',df)
 blocksize=float(df.iloc[2,1])
 st.write('Sample Size:',blocksize)
 samplerate=float(df.iloc[6,1])

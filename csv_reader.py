@@ -18,6 +18,7 @@ if uploaded_file is not None:
           st.write('CSV to Dataframe done')
           return df
      upload()
+     st.write('Uploading done...')
      blocksize=float(df.iloc[2,1])
      st.write('Sample Size:',blocksize)
      samplerate=float(df.iloc[6,1])

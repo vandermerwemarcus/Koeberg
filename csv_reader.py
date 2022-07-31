@@ -11,7 +11,7 @@ st.session_state.uploaded_file = st.file_uploader("Upload csv file here:")
 if 'uploaded_file' not in st.session_state:
      st.session_state.uploaded_file = 0
      st.write('Awaiting CSV upload...')
-if uploaded_file is not None:
+if st.session_state.uploaded_file is not None:
      st.write('CSV uploaded successfully')
      df=pd.read_csv(st.session_state.uploaded_file,low_memory=False)
      blocksize=float(df.iloc[2,1])

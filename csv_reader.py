@@ -8,10 +8,12 @@ df=pd.DataFrame()
 gv['G1']=0
 #Upload csv data:
 uploaded_file = st.file_uploader("Upload csv file here:")
-if uploaded_file is not None:
+if 'uploaded_file' not in st.session_state:
+     st.session_state.uploaded_file = 0
+     st.write('Awaiting CSV upload...')
+#if uploaded_file is not None:
      st.write('CSV uploaded successfully')
-     st.session_state.idf=pd.read_csv(uploaded_file,low_memory=False)
-     df=st.session_state.idf
+     df=pd.read_csv(st.session_state.uploaded_file,low_memory=False)
      blocksize=float(df.iloc[2,1])
      st.write('Sample Size:',blocksize)
      samplerate=float(df.iloc[6,1])

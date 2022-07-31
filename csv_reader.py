@@ -21,9 +21,11 @@ if uploaded_file is not None:
      st.write('Sample Size:',blocksize)
      samplerate=float(df.iloc[6,1])
      st.write('Sample Rate:',samplerate*1000,'ms')
-     length=blocksize*samplerate
      
-     slen=round(length,0)
+     if 'length' not in session_state:
+          st.session_state.length = 0
+     st.session_state.length=blocksize*samplerate
+     slen=round(st.session_state.length,0)
      st.write('Recording Length:',slen,'seconds')
      start=0
      end=0

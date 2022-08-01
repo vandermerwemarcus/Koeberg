@@ -10,14 +10,13 @@ df=pd.DataFrame()
 gv['G1']=0
 
 @st.cache
-def noti():
+def noti(a):
+ return a+2
  
- global a
- a=5
- return a
 
-noti()
-st.write(a)
+a=3
+res = noti(a)
+st.write(res)
 
 #@st.experimental_memo(suppress_st_warning=True,persist="disk")
 st.cache(func='upload')

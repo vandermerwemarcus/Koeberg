@@ -9,7 +9,7 @@ gv=pd.DataFrame()
 df=pd.DataFrame()
 gv['G1']=0
 
-@st.cache(func='noti')
+@st.cache()
 def noti():
  
  global a

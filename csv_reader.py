@@ -17,7 +17,7 @@ a=3
 res = noti(a)
 st.write(res)
 
-@st.experimental_memo(suppress_st_warning=True,persist="disk")
+#@st.experimental_memo(suppress_st_warning=True,persist="disk")
 def upload():
  uploaded_file = st.file_uploader("Upload csv file here:")
  if uploaded_file is not None:

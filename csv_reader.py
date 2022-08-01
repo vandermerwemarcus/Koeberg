@@ -19,14 +19,14 @@ res = noti(a)
 st.write(res)
 
 #@st.experimental_memo(suppress_st_warning=True,persist="disk")
-st.cache(func='upload')
+@st.cache
 def upload():
  uploaded_file = st.file_uploader("Upload csv file here:")
  if uploaded_file is not None:
-  global df
-  df=pd.read_csv(uploaded_file,low_memory=False)
-  return df
-upload()
+  #global df
+  df1=pd.read_csv(uploaded_file,low_memory=False)
+  return df1
+df = upload()
 blocksize=float(df.iloc[2,1])
 st.write('Sample Size:',blocksize)
 samplerate=float(df.iloc[6,1])

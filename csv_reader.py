@@ -12,20 +12,19 @@ gv['G1']=0
 @st.cache
 def noti(a):
  return a+2
- 
 
 a=3
 res = noti(a)
 st.write(res)
 
 @st.experimental_memo(suppress_st_warning=True,persist="disk")
-#@st.cache
 def upload():
  uploaded_file = st.file_uploader("Upload csv file here:")
  if uploaded_file is not None:
-  #global df
+  global df
   df1=pd.read_csv(uploaded_file,low_memory=False)
   return df1
+ 
 df = upload()
 blocksize=float(df.iloc[2,1])
 st.write('Sample Size:',blocksize)
